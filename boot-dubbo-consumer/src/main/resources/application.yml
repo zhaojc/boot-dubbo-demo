@@ -1,0 +1,11 @@
+server:
+  port: 8088
+
+spring: 
+  dubbo:
+    application: 
+      name: boot-dubbo-consumer
+    registry:
+#      address: zookeeper://127.0.0.1:2181
+      address: zookeeper://45.62.117.160:2181
+    scan: com.zhangbo.demo

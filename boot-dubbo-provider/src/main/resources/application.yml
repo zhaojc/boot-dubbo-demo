@@ -1,0 +1,26 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/maven-web
+    username: root
+    password: root
+#   使用阿里巴巴的Druid 连接池
+    type: com.alibaba.druid.pool.DruidDataSource
+    max-active: 200
+    max-idle: 50
+    min-idle: 5
+    initial-size: 5
+
+  dubbo:
+      application:
+        name: boot-dubbo-provider
+      registry:
+  #      address: zookeeper://127.0.0.1:2181
+        address: zookeeper://45.62.117.160:2181
+      protocol:
+        name: dubbo
+        port: 20880
+      scan: com.zhangbo.demo.service
